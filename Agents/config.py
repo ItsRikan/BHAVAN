@@ -1,0 +1,16 @@
+MODEL_NAME:str = 'gemini-2.5-flash'
+
+
+
+RETRY_CONFIG_ATTEMPTS:int = 5
+RETRY_CONFIG_DELAY:int = 1
+RETRY_CONFIG_EXP_BASE:int = 7
+RETRY_CONFIG_HTTP_STATUS_CODE:list[int] = [429,500,503,504]
+
+
+ARTIFACT_PATH = 'artifact'
+ROOM_MAP = 'room_map.json'
+LOGGING_FILE = 'logging.log'
+CHARGE_PER_DAY_STAY = 10000
+
+
