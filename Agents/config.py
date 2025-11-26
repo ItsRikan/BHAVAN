@@ -12,5 +12,6 @@ ARTIFACT_PATH = 'artifact'
 ROOM_MAP = 'room_map.json'
 LOGGING_FILE = 'logging.log'
 CHARGE_PER_DAY_STAY = 10000
+ROOT_AGENT_NAME:str = "BHAVAN"
 
 

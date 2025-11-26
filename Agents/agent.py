@@ -6,7 +6,7 @@ from google.adk.tools.function_tool import FunctionTool
 from .utils.utils import retry_config
 from .utils.room_map_utils import get_all_room_numbers
 from .sub_agents.tourist_place_finder import attraction_point_search_agent
-from .config import MODEL_NAME
+from .config import MODEL_NAME,ROOT_AGENT_NAME
 from dotenv import load_dotenv
 from .function_tools.about import get_details
 from .function_tools.room_check_in import book_room,book_room_confirmation
@@ -20,7 +20,7 @@ Base.metadata.create_all(engine)
 
 
 root_agent = Agent(
-    name='root_agent',
+    name=ROOT_AGENT_NAME,
     model=Gemini(model=MODEL_NAME,retry_options=retry_config),
     instruction="""you are a helpful assistance for hospitality management of a hotel.
     You have capablity to:
