@@ -10,7 +10,7 @@ from ..logging import logging
 async def book_room_confirmation(check_out_date:str,room_number:int=None)->dict:
     """returns the booking details (eg., room number, floor, check out date and cost) to ask for approval for booking
     required parameters: 
-    1. check_out_date : the date when the user wants to check out
+    1. check_out_date : the date when the user wants to check out (format YYYY/MM/DD)
     2. room_number : the room number the user wants to book. It is an optional field if not provided it will choose autometically.
     """
     if room_number and not room_validation(room_number=room_number):

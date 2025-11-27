@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from .function_tools.about import get_details
 from .function_tools.room_check_in import book_room,book_room_confirmation
 from .function_tools.get_feedback import get_feedback
-from .function_tools.room_check_out import room_checkout_confirmation,room_check_out
+from .function_tools.room_check_out import room_checkout_confirmation,room_checkout
 
 load_dotenv()
 
@@ -48,7 +48,7 @@ root_agent = Agent(
         FunctionTool(book_room),
         FunctionTool(get_feedback),
         FunctionTool(room_checkout_confirmation),
-        FunctionTool(room_check_out)
+        FunctionTool(room_checkout)
 
         ]
 )

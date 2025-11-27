@@ -23,7 +23,7 @@ async def room_checkout_confirmation(room_number:int)->dict:
         room = db.query(BookRoom).filter(BookRoom.room_number == room_number).first()
         cust_id = room.customer_id
         customer = db.query(Customers).filter(Customers.id == cust_id).first()
-        total_bill = (customer.check_in_date - date.today()).days * CHARGE_PER_DAY_STAY
+        total_bill = (date.today() - customer.check_in_date ).days * CHARGE_PER_DAY_STAY
         return {'status':'waiting for confirmation','message':f'confirm the information. Name {customer.name}, '\
                 f'phone number {customer.ph_number} and check in date is {customer.check_in_date}.',
                 'query':f'The total bill is {total_bill} how would you like to pay?'}
@@ -59,7 +59,9 @@ async def update_room_in_db(room_number:int,db,room)->dict:
             return {'status':'not_found','message':'the room was not booked or not found'}
         setattr(room,'is_booked',False)
         setattr(room,'booked_by',None)
-        setattr(room,'customer_id',0)
+        setattr(room,'customer_id',None)
+        setattr(room,'check_in_date',None)
+        setattr(room,'check_out_date',None)
         #db.add(room)
         db.commit()
         return {'status':'success'}
