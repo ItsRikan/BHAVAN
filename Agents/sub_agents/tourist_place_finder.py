@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from ..instruction import INSTRUCTION_ATTRACTION_POINT_SEARCHER,STRICT_INSTRUCTION
 from ..config import MODEL_NAME
 from ..utils.utils import retry_config
-
+from ..function_tools.get_feedback import get_feedback
 load_dotenv()
 
 

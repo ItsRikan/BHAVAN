@@ -18,7 +18,7 @@ async def insert_feedback(feedback:str,sentiment:Literal['positive','negative'])
         db.close()
 
 
-async def get_feedback(feedback:str,sentiment:Literal['positive','negative'])->dict:
+async def get_feedback(feedback:str,sentiment:Literal['positive','negative','urgent']='neutral')->dict:
     """
     feedback : feedback of the user
     sentiment : sentiment of the feedback ['positive','negative']

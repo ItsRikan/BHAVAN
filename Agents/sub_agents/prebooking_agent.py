@@ -9,7 +9,7 @@ from ..function_tools.about import get_details
 from .sub_agent_tools.prebooking_tool import prebooking_tool
 from .sub_agent_tools.cancel_prebooking_tool import cancel_prebooking_confirmation,cancel_prebooking
 from .sub_agent_tools.prebooking_to_checkin import check_in_from_prebooking,approval_for_check_in_from_prebooking
-from .booking_agent import booking_agent
+from ..function_tools.get_feedback import get_feedback
 
 
 prebooking_agent = Agent(
@@ -29,6 +29,7 @@ prebooking_agent = Agent(
           - you must use the cancel_prebooking_confirmation to confirm room number and show the payment requierment if required
           - if user confirms to cancel bookings then use the cancel_prebooking tool with confirmed room numbers to cancel prebooking.
           - show the results
+          - ask the user if he wants to provide any feedback or not. If yes then use the get_feedback tool
     3) check in from prebooking :
           - first of all you must use the approval_for_check_in_from_prebooking tool to get approval from guest
           - if user approve then use check_in_from_prebooking to book the rooms

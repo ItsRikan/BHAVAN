@@ -37,14 +37,6 @@ class Payment(Base):
     customer_id = Column(Integer,ForeignKey('customers.id'))   
 
 
-class SpaSlot(Base):
-    __tablename__ = 'spatable'
-    id = Column(Integer,primary_key=True,index=True)
-    is_booked = Column(Boolean,default=False)
-    booked_by = Column(String(50))
-    check_in_time = Column(DateTime)
-    stay_time = Column(Integer)
-
 class Feedback(Base):
     __tablename__ = 'feedback'
     id = Column(Integer,primary_key=True,index=True)

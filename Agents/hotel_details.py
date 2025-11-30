@@ -19,3 +19,7 @@ ABOUT_HOTEL:dict = {
         'total_number_of_rooms':NUMBER_OF_ROOMS_PER_FLOOR * NUMBER_OF_FLOORS,
         'rooms_per_floor':NUMBER_OF_ROOMS_PER_FLOOR,
     }
+
+
+
+LIST_OF_EXTRA_COMFORTS = ['pillow','water bottle','blanket']
