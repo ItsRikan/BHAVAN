@@ -11,7 +11,6 @@ RETRY_CONFIG_HTTP_STATUS_CODE:list[int] = [429,500,503,504]
 ARTIFACT_PATH = 'artifact'
 ROOM_MAP = 'room_map.json'
 LOGGING_FILE = 'logging.log'
-CHARGE_PER_DAY_STAY = 10000
 ROOT_AGENT_NAME:str = "BHAVAN"
 
 

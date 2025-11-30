@@ -1,8 +1,9 @@
 NUMBER_OF_ROOMS_PER_FLOOR:int = 10
 NUMBER_OF_FLOORS:int = 10
 HOTEL_FECILITIES:list = ['gym','spa','rsturant','sport court',]
-
-
+CHARGE_PER_DAY_STAY = 10000
+BEDS_PER_ROOM = 3
+CANCELATION_FEE_PER_DAY = 500
 
 ABOUT_HOTEL:dict = {
         'location':'Colaba Area,near Gateway of India,Maharashtra,Mumbai',
