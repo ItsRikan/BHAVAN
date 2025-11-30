@@ -39,7 +39,7 @@ async def cancel_prebooking_confirmation(name:str,room_numbers:list[int]=None)->
         if db:
             db.close()
         
-async def cancel_prebooking(room_numbers:list,amount:int,payment_method:str=None)->dict:
+async def cancel_prebooking(room_numbers:list[int],amount:int,payment_method:str=None)->dict:
     """
     This tool cancels prebooking and returns confirmation
     parameters:
@@ -50,9 +50,8 @@ async def cancel_prebooking(room_numbers:list,amount:int,payment_method:str=None
     db = None
     try:
         db = SessionLocal()
-        formated_room_numbers = '|'.join(str(rn) for rn in room_numbers)
         payment_status = await pay_bill(
-            room_numbers=formated_room_numbers,
+            room_numbers=room_numbers,
             payment_method=payment_method,
             amount=amount,
             cust_id=0,

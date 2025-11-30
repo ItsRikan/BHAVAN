@@ -41,7 +41,7 @@ root_agent = Agent(
         FunctionTool(get_feedback),
         FunctionTool(check_room)
         ],
-        sub_agents=[prebooking_agent,booking_agent,attraction_point_search_agent,general_agent]
+        sub_agents=[prebooking_agent,booking_agent,general_agent]
 )
 
 
