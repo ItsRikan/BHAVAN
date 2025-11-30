@@ -87,7 +87,7 @@ async def room_checkout(room_numbers:list[int],amount:int,payment_method:str='ca
             return payment_status
         for room in rooms_to_update:
             update_status = await update_room_in_db(room=room)
-            if update_status.get('status','failed'):
+            if update_status.get('status','failed')=='failed':
                 db.rollback()
                 return update_status
         db.commit()

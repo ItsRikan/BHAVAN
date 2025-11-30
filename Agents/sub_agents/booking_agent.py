@@ -8,7 +8,9 @@ from ..function_tools.about import get_details
 from .sub_agent_tools.room_check_in import book_room,book_room_confirmation
 from .sub_agent_tools.room_check_out import room_checkout,room_checkout_confirmation
 from ..function_tools.get_feedback import get_feedback
+from dotenv import load_dotenv
 
+load_dotenv()
 
 booking_agent = Agent(
     name='booking_agent',

@@ -13,6 +13,8 @@ from .function_tools.get_feedback import get_feedback
 from .sub_agents.sub_agent_tools.room_check_out import room_checkout_confirmation,room_checkout
 from .sub_agents.prebooking_agent import prebooking_agent
 from .sub_agents.booking_agent import booking_agent
+from .sub_agents.general_agent import general_agent
+from .function_tools.check_room import check_room
 load_dotenv()
 
 
@@ -30,13 +32,16 @@ root_agent = Agent(
     3) Find attraction point of a location. using attraction_point_search_agent sub agent 
     4) Current booking of  room using booking_agent (Before transfering confirm once, is the user talking about booking or prebooking)
     5) Prebooking of room using prebooking_agent sub agent (Before transfering confirm once, is the user talking about booking or prebooking)
+    6) extra comfort request reffer to general_agent
+    7) if you want status/check any room then use check_room to get details about that room
     """,
     tools=[
         FunctionTool(get_details),
         FunctionTool(get_all_room_numbers),
         FunctionTool(get_feedback),
+        FunctionTool(check_room)
         ],
-        sub_agents=[prebooking_agent,booking_agent,attraction_point_search_agent]
+        sub_agents=[prebooking_agent,booking_agent,attraction_point_search_agent,general_agent]
 )
 
 

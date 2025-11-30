@@ -10,7 +10,9 @@ from .sub_agent_tools.prebooking_tool import prebooking_tool
 from .sub_agent_tools.cancel_prebooking_tool import cancel_prebooking_confirmation,cancel_prebooking
 from .sub_agent_tools.prebooking_to_checkin import check_in_from_prebooking,approval_for_check_in_from_prebooking
 from ..function_tools.get_feedback import get_feedback
+from dotenv import load_dotenv
 
+load_dotenv()
 
 prebooking_agent = Agent(
     name='prebooking_agent',

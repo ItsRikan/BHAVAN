@@ -1,4 +1,4 @@
-from google.adk.tools.google_search_tool import google_search
+from google.adk.tools.google_search_tool import google_search,GoogleSearchTool
 from google.adk.agents import Agent
 from google.adk.models import Gemini
 from google.genai import types
@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 from ..instruction import INSTRUCTION_ATTRACTION_POINT_SEARCHER,STRICT_INSTRUCTION
 from ..config import MODEL_NAME
 from ..utils.utils import retry_config
-from ..function_tools.get_feedback import get_feedback
 load_dotenv()
 
 

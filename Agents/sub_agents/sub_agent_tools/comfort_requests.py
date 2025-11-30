@@ -4,7 +4,7 @@ from ...database import SessionLocal
 from sqlalchemy.orm import session
 from ...model import BookRoom
 
-async def comfort_request(room_number:int,request_for:list[Literal['pillow','water bottle','blanket']],quantity:list[int]):
+async def comfort_request(room_number:int,request_for:list[str],quantity:list[int]):
     """Helps to book extra comforts. (e.g, towel, pillow)\
     parameters :
         - room_number : room number of the guest 

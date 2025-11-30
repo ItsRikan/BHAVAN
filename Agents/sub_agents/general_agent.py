@@ -8,14 +8,16 @@ from ..hotel_details import CHARGE_PER_DAY_STAY,BEDS_PER_ROOM
 from ..function_tools.about import get_details
 from .sub_agent_tools.comfort_requests import comfort_request
 from ..function_tools.get_feedback import get_feedback
+from dotenv import load_dotenv
 
-prebooking_agent = Agent(
+load_dotenv()
+general_agent = Agent(
     name='general_agent',
     model=Gemini(model=MODEL_NAME,retry_options=retry_config),
     description="you are a helpful assistant for completing guests requests for extra comforts",
-    instruction=f"""you are a helpful assistant for completing guests requests for extra comforts
-          - if user wants any kind of comfort then you can use comfort_request for request for that comfort
-          - if the user reports for some issue or discomfort, then use the get_feedback tool and set the sentiment to urgent
+    instruction=f"""you are a helpful assistant for completing guests requests for extra comforts (like towel pillow) and accepting report for some issue or discomfort
+          - if user wants any kind of comfort (like pillow,towel etc.) then you can use comfort_request for request for that comfort
+          - if the user reports for some issue or discomfort (water is not comming, water likage in pipeline, ac is not working etc.), then use the get_feedback tool and set the sentiment to urgent
     """,
     tools=[
         FunctionTool(comfort_request),
